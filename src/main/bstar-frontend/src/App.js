@@ -4,11 +4,11 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css';
 import LoginPage from '../src/component/page/LoginPage';
 import WritePage from './component/page/WritePage';
-import MainPage from './component/page/MainPage';
+//import MainPage from './component/page/MainPage';
 import SearchPage from './component/page/SearchPage';
 import SettingPage from './component/page/SettingPage';
 import FriendPage from './component/page/FriendPage';
-import FirstPage from './component/page/FirstPage';
+//import FirstPage from './component/page/FirstPage';
 
 function App() {
    const [hello, setHello] = useState('')
