@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
-    function App() {
+function App() {
     const [hello, setHello] = useState('')
 
     useEffect(() => {
