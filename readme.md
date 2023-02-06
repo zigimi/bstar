@@ -143,7 +143,7 @@ def webappDir = "$projectDir/src/main/[PROJECTNAME]"
 직접 제작한 App.js로 내용을 변경하기 전에
 프론트엔드 프로젝트 위치에 설치해야 정상 동작함
 +App.js에 import axios from 'axios';는 지우지 말기
-+App.js와 component 폴더만 수정 및 추가할 것
++App.js와 component 폴더 및 src 폴더 내부만 수정 및 추가할 것
 
 ```batch
 npm install react-router-dom --save
