@@ -1,5 +1,7 @@
 <h1>react.js, gradle, springboot 연동 방법</h1>
 
+0. node js 설치
+
 1. SpringProjectName/src/main/ 경로로 접근 후 react 설치
 ```batch
 cd src/main
@@ -20,15 +22,13 @@ npm run eject   # 에러 발생 시 데이터를 전부 git push한 상태인지
 
 4. [리액트 PROJECT NAME]/config/paths.js 파일에서 buildPath 변수 build -> build/static
 
-
 5. [리액트 PROJECT NAME] 폴더에서 axios를 설치
 ```batch
 npm install axios --save
+npm install http-proxy-middleware --save
 ```
 
-6. [리액트 PROJECT NAME]/pakage.json에 "proxy": "http://localhost:8080" 추가
-
-7. [리액트 PROJECT NAME]/src/App.js에 해당 코드 추가
+6. [리액트 PROJECT NAME]/src/App.js에 해당 코드 추가
 ```javascript
 import React, {useEffect, useState} from 'react';
     import axios from 'axios';
@@ -52,6 +52,8 @@ import React, {useEffect, useState} from 'react';
 export default App;
 ```
 
+7. [리액트 PROJECT NAME]/pakage.json에 "proxy": "http://localhost:8080" 추가
+
 8. src/main/java/com.[springboot 프로젝트]에서 패키지 생성 후 HelloWorldController.java 파일을 생성
 ```java
 package com.demogroup.demoweb.Controller;
@@ -71,7 +73,7 @@ public class HelloWorldController {
 
 여기까지 진행시 localhost:3000에서는 "백엔드에서 가져온 데이터입니다 : hello world!"가,
 localhost:8080에서는 "hello world!"가 출력되어야 한다.
-(react는 npm start, spring boot는 project run 해야 함)
+(spring boot는 project run 이후 react는 npm start)
 ---
 
 <h5>이제 localhost:8080에서 리액트 화면이 나올 수 있도록 스크립트 작성</h5>
@@ -124,7 +126,7 @@ def webappDir = "$projectDir/src/main/[PROJECTNAME]"
 }
 ```
 
-10. 홈 디렉토리로 빠져나와 빌드를 실행
+10. 홈 디렉토리로 빠져나와 빌드를 실행(한 번 실행 이후 다시 실행 한다면 [리액트 PROJECT NAME]/build 폴더와 [SpringProjectName]/src/main/resources/static 폴더 삭제 후 재실행)
 ```batch
 ./gradlew build
 ```
@@ -141,13 +143,14 @@ def webappDir = "$projectDir/src/main/[PROJECTNAME]"
 직접 제작한 App.js로 내용을 변경하기 전에
 프론트엔드 프로젝트 위치에 설치해야 정상 동작함
 +App.js에 import axios from 'axios';는 지우지 말기
++App.js와 component 폴더만 수정 및 추가할 것
 
 ```batch
-npm install react-router-dom
+npm install react-router-dom --save
 npm install --save styled-components
-npm install @mui/material
-npm install @mui/icons-material
-npm install @emotion/styled
+npm install @mui/material --save
+npm install @mui/icons-material --save
+npm install @emotion/styled --save
 ```
 
 ---

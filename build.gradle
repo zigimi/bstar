@@ -60,12 +60,6 @@ task copyReactBuildFiles(type: Copy) {
 	into "$projectDir/src/main/resources/static"
 }
 
-tasks {
-	processResources {
-		duplicatesStrategy = org.gradle.api.file.DuplicatesStrategy.INCLUDE
-	}
-}
-
 tasks.named('test') {
 	useJUnitPlatform()
 }
