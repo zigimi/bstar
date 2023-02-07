@@ -74,9 +74,10 @@ public class HelloWorldController {
 여기까지 진행시 localhost:3000에서는 "백엔드에서 가져온 데이터입니다 : hello world!"가,
 localhost:8080에서는 "hello world!"가 출력되어야 한다.
 (spring boot는 project run 이후 react는 npm start)
----
 
-<h5>이제 localhost:8080에서 리액트 화면이 나올 수 있도록 스크립트 작성</h5>
+
+이제 localhost:8080에서 리액트 화면이 나올 수 있도록 스크립트 작성
+---
 
 9. SpringBoot 프로젝트의 build.gradle로 이동해서 dependencies{ ... }와 test{ ... } 사이에 아래 소스 첨부
 ```batch
@@ -146,19 +147,26 @@ def webappDir = "$projectDir/src/main/[PROJECTNAME]"
 
 3. [리액트 PROJECT NAME]/build 폴더와 [SpringProjectName]/src/main/resources/static 폴더 삭제 후 ./gradlew build 실행
 
-4. 이후 필요한 모듈이 있다는 에러 발생시 아래 형식으로 다운로드
+4. 빌드 완료 후 [SpringProjectName]/build/libs로 이동
+
+5. 폴더 안에 있는 jar 파일 실행(java -jar FILENAME)
+
+6. 이후 필요한 모듈이 있다는 에러 발생시 아래 형식으로 다운로드
 ```batch
 npm install [모듈이름] --save
 ```
 
-5. ERESOLVE could not resolve 에러 발생시 [리액트 PROJECT NAME] 폴더 이동 후 아래 명령어 실행 후 다시 3번 반복
+7. ERESOLVE could not resolve 에러 발생시 [리액트 PROJECT NAME] 폴더 이동 후 아래 명령어 실행 후 다시 3번 반복
 ```batch
 npm config set legacy-peer-deps true
 npm i
 ```
 
----
++ 한 번 성공한 이후에는 그냥 application.class run 하면 변동사항 자동 반영됨
+
+
 <h1>gradlew build시 오류 발생 해결</h1>
+---
 
 build.gradle 파일에 아래 코드 추가
 
