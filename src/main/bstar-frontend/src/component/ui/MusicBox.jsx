@@ -6,15 +6,21 @@ import music2 from "./music/After school - love letter.mp3";
 import music3 from "./music/004 아이유 - 너의 의미 (Feat. 김창완).mp3";
 import music4 from "./music/MC Mong - 죽을 만큼 아파서 (Feat. 멜로우).mp3";
 import ReactAudioPlayer from 'react-audio-player';
+import styled from "styled-components";
 
 
+const WhatMusic = styled.div`
+text-align : center;
+align-items: center;
+font-size : 15px;
+`;
 
 function MusicBox(props) {
   return (
     <div>
-      <h3>
-        The Weeknd - I Feel It Coming ( cover by <b>J.Fla</b> )
-      </h3>
+      <WhatMusic>
+       ♬ now playing - ♬ 
+      </WhatMusic>
 
  
       <ReactAudioPlayer
@@ -22,7 +28,8 @@ function MusicBox(props) {
         type="audio/mp3"
         autoPlay
         controls
-        volume = "0.2"
+        volume="0.2"
+        style={{ margin: '0 1vw', height: '2vw', width: '20vw' }}
       >오디오 지원 안함 </ReactAudioPlayer>
     </div>
   );

@@ -31,21 +31,21 @@ npm install http-proxy-middleware --save
 6. [리액트 PROJECT NAME]/src/App.js에 해당 코드 추가
 ```javascript
 import React, {useEffect, useState} from 'react';
-    import axios from 'axios';
+import axios from 'axios';
 
-    function App() {
+function App() {
     const [hello, setHello] = useState('')
 
     useEffect(() => {
-    axios.get('/api/hello')
-    .then(response => setHello(response.data))
-    .catch(error => console.log(error))
-}, []);
+        axios.get('/api/hello')
+        .then(response => setHello(response.data))
+        .catch(error => console.log(error))
+    }, []);
 
     return (
-    <div>
-    백엔드에서 가져온 데이터입니다 : {hello}
-    </div>
+        <div>
+            백엔드에서 가져온 데이터입니다 : {hello}
+        </div>
     );
 }
 
@@ -138,19 +138,23 @@ def webappDir = "$projectDir/src/main/[PROJECTNAME]"
 13. Localhost:8080 접속해서 React화면 출력되면 성공!
 
 ---
-<h1>프론트앤드 필요 라이브러리 설치를 위한 명령어</h1>
+<h1>프론트앤드 코드로 교체 위해 참고</h1>
 
-직접 제작한 App.js로 내용을 변경하기 전에
-프론트엔드 프로젝트 위치에 설치해야 정상 동작함
-+App.js에 import axios from 'axios';는 지우지 말기
-+App.js와 component 폴더 및 src 폴더 내부만 수정 및 추가할 것
+1. package.json, package-lock.json, src 폴더 덮어쓰면 됨
 
+2. package.json, package-lock.json의 name 부분을 자신의 리액트 프로젝트 이름으로 변경
+
+3. [리액트 PROJECT NAME]/build 폴더와 [SpringProjectName]/src/main/resources/static 폴더 삭제 후 ./gradlew build 실행
+
+4. 이후 필요한 모듈이 있다는 에러 발생시 아래 형식으로 다운로드
 ```batch
-npm install react-router-dom --save
-npm install --save styled-components
-npm install @mui/material --save
-npm install @mui/icons-material --save
-npm install @emotion/styled --save
+npm install [모듈이름] --save
+```
+
+5. ERESOLVE could not resolve 에러 발생시 [리액트 PROJECT NAME] 폴더 이동 후 아래 명령어 실행 후 다시 3번 반복
+```batch
+npm config set legacy-peer-deps true
+npm i
 ```
 
 ---
