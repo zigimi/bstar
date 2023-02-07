@@ -151,7 +151,7 @@ function LoginPage(props) {
                                     }
                                 }}
                                 onClick={() => {
-                                    navigate("/main");
+                                    navigate("/oauth2/authorization/google");
                                   }}
                             >
                                 소셜 로그인

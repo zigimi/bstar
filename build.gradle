@@ -12,11 +12,19 @@ repositories {
 	mavenCentral()
 	maven { url 'https://repo.spring.io/milestone' }
 	maven { url 'https://repo.spring.io/snapshot' }
+	jcenter()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation('org.springframework.boot:spring-boot-starter-web')
+	implementation('org.projectlombok:lombok')
+	annotationProcessor('org.projectlombok:lombok')
+	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+	implementation('com.h2database:h2')
+	implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
+	implementation('org.springframework.session:spring-session-jdbc')
+	testImplementation('org.springframework.security:spring-security-test')
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
 
 def frontendDir = "$projectDir/src/main/bstar-frontend"
