@@ -132,8 +132,8 @@ function LoginPage(props) {
                             >
                                 로그인
                             </Button>
-                            <Button
-                                type="submit"
+                            <a
+                                type="button"
                                 variant="outlined"
                                 sx={{ //css 적용
                                     mt: 3,
@@ -150,12 +150,10 @@ function LoginPage(props) {
                                         borderColor: 'skyblue'
                                     }
                                 }}
-                                onClick={() => {
-                                    navigate("/oauth2/authorization/google");
-                                  }}
+                                href="/oauth2/authorization/google"
                             >
                                 소셜 로그인
-                            </Button>
+                            </a>
                             {/* Link는 a tag 같은 역할 */}
                             <Link
                                 style={{
