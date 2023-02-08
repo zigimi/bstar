@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Sidebar from './Sidebar';
 import { styled } from '@mui/material/styles';
 import {Box, Typography, Divider, OutlinedInput, FormControl, TableContainer, 
     Table, TableHead, Button, TableRow, TableCell, Checkbox, TableBody, Paper, tableCellClasses} from '@mui/material';
 import { Container } from '@mui/system';
 import data from "../../data.json";
+import axios from 'axios';
 
 const StyledTableCell = styled(TableCell)(({theme}) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -87,6 +88,14 @@ function SettingPage(props) {
         setSelected(newSelected);
     }
 
+    const [title, setTitle] = useState("")
+
+        useEffect(() => {
+            axios.get('/setting/title')
+            .then(response => setTitle(response.data))
+            .catch(error => console.log(error))
+        }, []);
+
     const isSelected = (nickName) => selected.indexOf(nickName) !== -1;
     
     const onRemoveData = () => {
@@ -117,7 +126,7 @@ function SettingPage(props) {
                             <label style={{color: 'rgba(0,0,0,0.80)', marginBottom: '10px'}}>블로그 명</label>
                             <OutlinedInput
                                 name="blogName"
-                                value={inputs.blogName}
+                                value={title}
                                 onChange={onChangeInputs}
                             />
                         </FormControl>
