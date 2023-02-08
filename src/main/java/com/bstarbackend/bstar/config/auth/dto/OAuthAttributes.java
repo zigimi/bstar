@@ -1,7 +1,7 @@
 package com.bstarbackend.bstar.config.auth.dto;
 
 import com.bstarbackend.bstar.domain.user.Role;
-import com.bstarbackend.bstar.domain.user.User;
+import com.bstarbackend.bstar.domain.user.Users;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -39,8 +39,8 @@ public class OAuthAttributes {
                 .build();
     }
 
-    public User toEntity() {
-        return User.builder()
+    public Users toEntity() {
+        return Users.builder()
                 .name(name)
                 .email(email)
                 .picture(picture)
