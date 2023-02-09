@@ -88,11 +88,11 @@ function SettingPage(props) {
         setSelected(newSelected);
     }
 
-    const [title, setTitle] = useState("")
+    const [info, setInfo] = useState([]);
 
         useEffect(() => {
-            axios.get('/setting/title')
-            .then(response => setTitle(response.data))
+            axios.get('/setting/info')
+            .then(response => {setInfo(response.data); console.log(info)})
             .catch(error => console.log(error))
         }, []);
 
@@ -126,7 +126,7 @@ function SettingPage(props) {
                             <label style={{color: 'rgba(0,0,0,0.80)', marginBottom: '10px'}}>블로그 명</label>
                             <OutlinedInput
                                 name="blogName"
-                                value={title}
+                                value={info.title}
                                 onChange={onChangeInputs}
                             />
                         </FormControl>
@@ -134,7 +134,7 @@ function SettingPage(props) {
                             <label style={{color: 'rgba(0,0,0,0.80)', marginBottom: '10px'}}>별명</label>
                             <OutlinedInput 
                                 name="nickName"
-                                value={inputs.nickName}
+                                value={info.nickname}
                                 onChange={onChangeInputs}
                             />
                         </FormControl>
@@ -142,7 +142,7 @@ function SettingPage(props) {
                             <label style={{color: 'rgba(0,0,0,0.80)', marginBottom: '10px'}}>프로필 소개글</label>
                             <OutlinedInput 
                                 name="introduction"
-                                value={inputs.introduction}
+                                value={info.intro}
                                 onChange={onChangeInputs}
                             />
                         </FormControl>
