@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.9d57b628.css",
-    "main.js": "/static/js/main.188f89cd.js",
+    "main.js": "/static/js/main.0f720bb5.js",
     "static/js/787.ad4aea20.chunk.js": "/static/js/787.ad4aea20.chunk.js",
     "static/media/G-Dragon - R.O.D. (feat. Lydia Paek).mp3": "/static/media/G-Dragon - R.O.D. (feat. Lydia Paek).e284a5bf6d995e3477aa.mp3",
     "static/media/After school - love letter.mp3": "/static/media/After school - love letter.553fc7bde22e6ce0d0f1.mp3",
@@ -13,11 +13,11 @@
     "static/media/upload_icon.png": "/static/media/upload_icon.954b9686fad09e3cf670.png",
     "index.html": "/index.html",
     "main.9d57b628.css.map": "/static/css/main.9d57b628.css.map",
-    "main.188f89cd.js.map": "/static/js/main.188f89cd.js.map",
+    "main.0f720bb5.js.map": "/static/js/main.0f720bb5.js.map",
     "787.ad4aea20.chunk.js.map": "/static/js/787.ad4aea20.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9d57b628.css",
-    "static/js/main.188f89cd.js"
+    "static/js/main.0f720bb5.js"
   ]
 }

@@ -92,7 +92,7 @@ function SettingPage(props) {
 
         useEffect(() => {
             axios.get('/setting/info')
-            .then(response => {setInfo(response.data); console.log(info)})
+            .then(response => setInfo(response.data))
             .catch(error => console.log(error))
         }, []);
 
